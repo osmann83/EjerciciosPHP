@@ -1,3 +1,15 @@
+<?php
+  require "Pruebaconexion.php";
+
+  $objConexion = Conectarse();
+
+  $sql = "SELECT idCargo, carNombre FROM cargos";
+
+  $resultado = $objConexion->query($sql);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +21,9 @@
 </head>
 <body>
 
-<div class="container mt-3">
-  <h2>Stacked form</h2>
-  <form action="/action_page.php">
+<div class="container mt-3 col-sm-6 p-3 bg-dark text-white">
+  <h2>Formulario Agregar Empleado</h2>
+  <form action="validarAgregarFormulario.php">
     <div class="mb-3 mt-3">
       <label for="number">Identificacion:</label>
       <input type="number" class="form-control" id="number" placeholder="Ingresa la identificación" name="ID" autofocus>
@@ -29,17 +41,28 @@
       <input type="email" class="form-control" id="email" placeholder="Ingresa tú correo" name="email">
     </div>
     <div class="mb-3 mt-3">
-      <label for="gender">Genero:</label>
-      <input class="form-control" id="gender" placeholder="Con que genero se identifica" name="gen" list="generos">
-      <datalist id="gender">
-        <option value="Masculino">
-        <option value="Femenino">
-        <option value="Otro">
-      </datalist>
+      <label for="gender">Genero:</label>      
+      <select id="gender" class="form-control">
+        <option>Masculino</option>
+        <option>Femenino</option>
+        <option>Otro</option>
+      </select>
     </div>
     <div class="mb-3">
-      <label for="nom">Nombre:</label>
-      <input type="text" class="form-control" id="nom" placeholder="Ingresa tú nombre" name="nombre">
+      <label for="nom">Cargo:</label>
+      <select id="cargo" class="form-control">
+        <!--<input type="select" class="form-control" id="cargo" placeholder="Ingrese sú cargo" name="cargo">-->
+        <option value="0">Seleccione</option>
+        <?php
+        
+          while($cargo = $resultado->fetch_object())
+          {
+        ?>
+            <option value="<?php echo $cargo->idCargo?>"><?php echo $cargo->carNombre?></option>
+        <?php
+          }
+        ?>
+      </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
