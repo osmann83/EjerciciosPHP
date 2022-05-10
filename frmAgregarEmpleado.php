@@ -25,24 +25,25 @@
   <h2>Formulario Agregar Empleado</h2>
   <form action="validarAgregarFormulario.php">
     <div class="mb-3 mt-3">
-      <label for="number">Identificacion:</label>
-      <input type="number" class="form-control" id="number" placeholder="Ingresa la identificación" name="ID" autofocus>
+      <label for="identificacion">Identificacion:</label>
+      <input type="number" class="form-control" id="identificacion" placeholder="Ingresa la identificación"
+        name="identificacion" autofocus>
     </div>
     <div class="mb-3">
-      <label for="nom">Nombre:</label>
+      <label for="nombre">Nombre:</label>
       <input type="text" class="form-control" id="nom" placeholder="Ingresa tú nombre" name="nombre">
     </div>
     <div class="mb-3 mt-3">
-      <label for="fec">Fecha de Ingreso:</label>
-      <input type="date" class="form-control" id="fec" placeholder="Ingresa la fecha de ingreso" name="fec" >
+      <label for="fecha">Fecha de Ingreso:</label>
+      <input type="date" class="form-control" id="fecha" placeholder="Ingresa la fecha de ingreso" name="fecha" >
     </div>
     <div class="mb-3">
       <label for="email">Correo Electronico:</label>
       <input type="email" class="form-control" id="email" placeholder="Ingresa tú correo" name="email">
     </div>
     <div class="mb-3 mt-3">
-      <label for="gender">Genero:</label>      
-      <select id="gender" class="form-control">
+      <label for="genero">Genero:</label>      
+      <select id="genero" class="form-control" name="genero">
         <option>Masculino</option>
         <option>Femenino</option>
         <option>Otro</option>
@@ -50,7 +51,7 @@
     </div>
     <div class="mb-3">
       <label for="nom">Cargo:</label>
-      <select id="cargo" class="form-control">
+      <select id="cargo" class="form-control" name="cargo">
         <!--<input type="select" class="form-control" id="cargo" placeholder="Ingrese sú cargo" name="cargo">-->
         <option value="0">Seleccione</option>
         <?php
