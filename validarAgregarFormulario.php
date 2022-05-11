@@ -16,5 +16,4 @@ if($resultado)
 else
     echo "Problemas al insertar empleado";
 
-
 ?>
