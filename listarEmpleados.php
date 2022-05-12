@@ -2,6 +2,11 @@
 
 require "Pruebaconexion.php";
 
+extract ($_REQUEST);
+
+if (!isset($_REQUEST['x']))
+    $x=0;
+
 $objConexion = Conectarse();
 
 $sql = "SELECT e.idEmpleado, e.empIdentificacion, e.empNombre, e.empCorreo, e.empFechaIngreso, c.carNombre, c.carSueldo FROM empleados e, cargos c
@@ -70,7 +75,16 @@ $resultado = $objConexion -> query($sql);
         ?>
 
         </tbody>
-    </table>
+    </table>    
     </div>
+    <p>
+        <?php
+            if($x==1)
+                echo "Se ha actualizado el empleado correctamente";
+            if($x==2)
+                echo "Problemas al actualizar el Empleado";        
+        ?>
+
+    </p>
 </body>
 </html>
