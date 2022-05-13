@@ -12,8 +12,8 @@
     $resultado = $objConexion->query($sql);
 
     if($resultado)
-        echo "El empleado se ha agregado correctamente";
+        header("location: listarEmpleados.php?x=5");//x=5 se ha agregado correctamente
     else
-        echo "Problemas al insertar empleado";
+        header("location: listarEmpleados.php?x=6");//x=6 no se ha agregado correctamente
 
 ?>

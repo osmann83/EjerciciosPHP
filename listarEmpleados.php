@@ -63,7 +63,7 @@ $resultado = $objConexion -> query($sql);
                 </a>
             </td>
             <td align="center">
-                <a href="frmActualizarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="img/trash.svg" width="32" height="32">
+                <a href="eliminarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="img/trash.svg" width="32" height="32">
                 </a>
             </td>
             
@@ -79,19 +79,45 @@ $resultado = $objConexion -> query($sql);
     </div>
     <p>
         <?php
-            if($x==1)
-            
+            switch($x)
+            {
+                case 1:
         ?>
-                <script>window.alert("Se ha actualizado el usuario");</script>
-        <?php    
-            if($x==2)
-            
-        ?>        
-                <script>window.alert("No se ha actualizado el ususario");</script>
+                    <script>window.alert('Se ha actualizado el usuario');</script>
+        <?php
+                break;
+                
+                case 2:
+        ?>
+                    <script>window.alert('No se ha actualizado el usuario');</script>
         <?php        
-            
-          
-        ?>    
+                break;
+        
+                case 3:
+        ?>
+                    <script>window.alert('Se ha eliminado el usuario');</script>        
+        <?php       
+               break;
+               
+               case 4:
+        ?>
+                    <script>window.alert('No se ha Eliminado el usuario');</script>
+        <?php        
+               break;   
+               case 5:
+        ?>
+                    <script>window.alert('Se ha Agregado el usuario');</script>        
+        <?php       
+                break;
+                       
+                case 6:
+        ?>
+                    <script>window.alert('No se ha Agregado el usuario');</script>
+        <?php        
+                break;     
+            }
+        $x=0;        
+        ?>        
     </p>
 </body>
 </html>
