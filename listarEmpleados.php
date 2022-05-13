@@ -80,11 +80,18 @@ $resultado = $objConexion -> query($sql);
     <p>
         <?php
             if($x==1)
-                echo "Se ha actualizado el empleado correctamente";
-            if($x==2)
-                echo "Problemas al actualizar el Empleado";        
+            
         ?>
-
+                <script>window.alert("Se ha actualizado el usuario");</script>
+        <?php    
+            if($x==2)
+            
+        ?>        
+                <script>window.alert("No se ha actualizado el ususario");</script>
+        <?php        
+            
+          
+        ?>    
     </p>
 </body>
 </html>

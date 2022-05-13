@@ -3,6 +3,7 @@
     require "Pruebaconexion.php";
     extract($_REQUEST);
     
+    
     $objConexion = Conectarse();
 
     $sql ="UPDATE empleados set empIdentificacion = '$_REQUEST[identificacion]', empNombre = '$_REQUEST[nombre]', empCorreo = '$_REQUEST[email]', 
