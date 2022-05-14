@@ -1,8 +1,8 @@
 <?php
 extract($_REQUEST);
 
-if(!isset($_REQUEST['x']))
-   $x=0;
+if(!isset($_REQUEST['valse']))
+   $valse=0;
 
 ?>
 
@@ -41,9 +41,31 @@ if(!isset($_REQUEST['x']))
                   <button type="submit" class="btn btn-black">Login</button>
                   <button type="submit" class="btn btn-secondary">Register</button>
                </form>
+               
             </div>
          </div>
       </div>
+      <?php
+                  switch($valse)
+                  {
+                     case 1:
+      ?>                  
+                        <script>window.alert('Usuario no registrado con los datos ingresados, vuelva a intentar');</script>;
+      <?php
+                        break;
+                     case 2:      
+      ?>                  
+                        <script>window.alert('Debe iniciar sesión para poder ingresar a la aplicación');</script>;
+      <?php
+                        break;
+                     case 3:
+      ?>                  
+                        <script>window.alert('El usuario ha cerrado sesión');</script>;
+      <?php                  
+                        break;
+                  }
+                  $valse=0;
+      ?>
     
 </body>
 </html>
