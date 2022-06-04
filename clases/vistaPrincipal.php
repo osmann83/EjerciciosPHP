@@ -1,5 +1,14 @@
 <?php
     session_start();
+    
+    
+    //-----------------------------------------------------------------------------
+	function __construct()
+	{}
+	//-----------------------------------------------------------------------------
+	function __destruct()
+	{}
+	//-----------------------------------------------------------------------------
     extract ($_REQUEST);
 
     if(!isset($_SESSION['user']))
@@ -17,14 +26,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style type="text/css">
-        #divContenido{
-            position:absolute;
-            left:320px;
-            top:120px;
-            width:858px;
-            height:400px;
-            z-index: 4;
-            overflow:auto
+        #divContenido
+        {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        body {
+        margin: 10px;
+        font-family: "Lato", sans-serif;
         }
     </style>
     <title>Pagina Principal</title>
@@ -50,7 +60,7 @@
         </div>
     </nav>
     <div id="divContenido">
-        <?php include $pg.".php"; ?>
+        <?php include $pg.'.php'; ?>
     </div>
 
 

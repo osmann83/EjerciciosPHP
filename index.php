@@ -1,9 +1,9 @@
 <?php
+require "clases/Pruebaconexion.php";
 extract($_REQUEST);
 
 if(!isset($_REQUEST['valse']))
    $valse=0;
-
 ?>
 
 
@@ -29,7 +29,7 @@ if(!isset($_REQUEST['valse']))
       <div class="main">
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
-               <form action="validarInicioSesion.php" autocomplete="off">
+               <form action="clases/validarInicioSesion.php" autocomplete="off">
                   <div class="mb-3 mt-3">
                      <label for="nombre">Nombre de Usuario</label>
                      <input type="text" class="form-control" placeholder="Nombre de Usuario" name="login" autofocus require>
@@ -50,17 +50,17 @@ if(!isset($_REQUEST['valse']))
                   {
                      case 1:
       ?>                  
-                        <script>window.alert('Usuario no registrado con los datos ingresados, vuelva a intentar');</script>;
+                        <script>window.alert('Usuario no registrado con los datos ingresados, vuelva a intentar');</script>
       <?php
                         break;
                      case 2:      
       ?>                  
-                        <script>window.alert('Debe iniciar sesión para poder ingresar a la aplicación');</script>;
+                        <script>window.alert('Debe iniciar sesión para poder ingresar a la aplicación');</script>
       <?php
                         break;
                      case 3:
       ?>                  
-                        <script>window.alert('El usuario ha cerrado sesión');</script>;
+                        <script>window.alert('El usuario ha cerrado sesión');</script>
       <?php                  
                         break;
                   }

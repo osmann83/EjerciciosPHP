@@ -59,11 +59,11 @@ $resultado = $objConexion -> query($sql);
             <td><?php echo $empleado->carNombre ?></td>
             <td><?php echo $empleado->carSueldo ?></td>
             <td align="center">
-                <a href="frmActualizarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="img/pencil-square.svg" width="32" height="32">
+                <a href="frmActualizarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="../img/pencil-square.svg" width="32" height="32">
                 </a>
             </td>
             <td align="center">
-                <a href="eliminarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="img/trash.svg" width="32" height="32">
+                <a href="eliminarEmpleado.php?idEmpleado=<?php echo $empleado->idEmpleado?>"><img src="../img/trash.svg" width="32" height="32">
                 </a>
             </td>
             
